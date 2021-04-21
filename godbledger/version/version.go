@@ -62,10 +62,8 @@ func ArchiveVersion(gitCommit string) string {
 
 func VersionWithCommit() string {
 	vsn := Version
-	vsn += "-" + gitBranch
 	if len(gitCommit) >= 8 {
-		vsn += "-" + gitCommit[:8]
+		vsn += "_" + gitCommit[:8]
 	}
-	vsn += "-" + gitDate
 	return vsn
 }
